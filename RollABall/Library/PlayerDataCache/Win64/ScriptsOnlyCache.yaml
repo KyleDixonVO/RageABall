@@ -213,7 +213,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 1a49f68fe71734f5fcacf7eb98ae4bf2
+      Hash: 44ed3e38bc5902de5135795c046dc013
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
