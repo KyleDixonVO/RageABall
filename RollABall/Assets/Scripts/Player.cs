@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public GameObject WinTextObject;
     public TextMeshProUGUI LoseTextObject;
+    public GameObject ControlMenuObject;
     public float speedCap = 10f;
     public Rigidbody rigidbody;
     public Transform Spawn;
@@ -33,7 +34,21 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            ControlMenuObject.SetActive(true);
+        }
+        else
+        {
+            ControlMenuObject.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             PlayerMoveForward = true;
