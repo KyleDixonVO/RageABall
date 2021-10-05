@@ -1,2 +1,2 @@
 # RageABall
-RageABall Version 0.1
+RageABall iterative design project
