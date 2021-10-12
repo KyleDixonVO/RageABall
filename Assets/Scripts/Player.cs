@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
         WinTextObject.SetActive(false);
         this.gameObject.SetActive(true);
         thePlayer.transform.position = Spawn.transform.position;
+        ControlMenuObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,16 +41,18 @@ public class Player : MonoBehaviour
             Application.Quit();
         }
 
-        if (Input.GetKey(KeyCode.Return))
-        {
-            ControlMenuObject.SetActive(true);
-        }
-        else
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             ControlMenuObject.SetActive(false);
         }
+       
 
         if (Input.GetKeyDown(KeyCode.W))
+        {
+            PlayerMoveForward = true;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             PlayerMoveForward = true;
         }
@@ -59,7 +62,17 @@ public class Player : MonoBehaviour
             PlayerMoveBack = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            PlayerMoveBack = true;
+        }
+
         if (Input.GetKeyDown(KeyCode.D))
+        {
+            PlayerMoveRight = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             PlayerMoveRight = true;
         }
@@ -69,6 +82,10 @@ public class Player : MonoBehaviour
             PlayerMoveLeft = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PlayerMoveLeft = true;
+        }
 
     }
     void SetScoreText()
