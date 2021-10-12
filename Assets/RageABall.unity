@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.5, z: 6.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &10093076 stripped
 Transform:
@@ -318,6 +318,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16470287}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &18393330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18393331}
+  m_Layer: 0
+  m_Name: Vertical Spinners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18393331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18393330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -398.06512, y: 2.531299, z: -11.160707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1458675237}
+  - {fileID: 1234539677}
+  - {fileID: 1013612368}
+  - {fileID: 304378372}
+  - {fileID: 1839066432}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &23752361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1196,7 +1231,7 @@ GameObject:
   - component: {fileID: 304378374}
   - component: {fileID: 304378373}
   m_Layer: 0
-  m_Name: West (18)
+  m_Name: Vert. Spinner 4
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1210,11 +1245,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304378371}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.053, y: 1, z: -2.847}
-  m_LocalScale: {x: 1, y: 0.4, z: 0.25}
+  m_LocalPosition: {x: -1.7228699, y: -1.5312991, z: -0.22729206}
+  m_LocalScale: {x: 4, y: 1.6, z: 0.25}
   m_Children: []
-  m_Father: {fileID: 1293719695}
-  m_RootOrder: 21
+  m_Father: {fileID: 18393331}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &304378373
 MonoBehaviour:
@@ -1663,7 +1698,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.5, z: 3.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &396588856 stripped
 Transform:
@@ -1927,7 +1962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -2842,7 +2877,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.5, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -25, y: 180, z: 0}
 --- !u!4 &698665722 stripped
 Transform:
@@ -3340,7 +3375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -4059,7 +4094,7 @@ GameObject:
   - component: {fileID: 1013612370}
   - component: {fileID: 1013612369}
   m_Layer: 0
-  m_Name: West (16)
+  m_Name: Vert. Spinner 3
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4073,11 +4108,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013612367}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.622, y: 1, z: -2.2}
-  m_LocalScale: {x: 1.5, y: 0.4, z: 0.25}
+  m_LocalPosition: {x: 0.5531311, y: -1.5312991, z: 2.3607073}
+  m_LocalScale: {x: 6, y: 1.6, z: 0.25}
   m_Children: []
-  m_Father: {fileID: 1293719695}
-  m_RootOrder: 19
+  m_Father: {fileID: 18393331}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!114 &1013612369
 MonoBehaviour:
@@ -4321,7 +4356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -4768,7 +4803,7 @@ GameObject:
   - component: {fileID: 1230867423}
   - component: {fileID: 1230867422}
   m_Layer: 0
-  m_Name: West (6)
+  m_Name: Horizontal Spinner 4
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4786,7 +4821,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1293719695}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1230867422
 MonoBehaviour:
@@ -4876,7 +4911,7 @@ GameObject:
   - component: {fileID: 1234539679}
   - component: {fileID: 1234539678}
   m_Layer: 0
-  m_Name: West (15)
+  m_Name: Vert. Spinner 2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4890,11 +4925,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234539676}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 1.808, y: 1, z: -2.585}
-  m_LocalScale: {x: 1, y: 0.4, z: 0.25}
+  m_LocalPosition: {x: 5.297119, y: -1.5312991, z: 0.8207073}
+  m_LocalScale: {x: 4, y: 1.6, z: 0.25}
   m_Children: []
-  m_Father: {fileID: 1293719695}
-  m_RootOrder: 18
+  m_Father: {fileID: 18393331}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
 --- !u!114 &1234539678
 MonoBehaviour:
@@ -5126,10 +5161,10 @@ Transform:
   - {fileID: 1571256447}
   - {fileID: 1759373503}
   - {fileID: 1998288827}
+  - {fileID: 1230867421}
   - {fileID: 1534908834}
   - {fileID: 2016449870}
   - {fileID: 2146044567}
-  - {fileID: 1230867421}
   - {fileID: 585580504}
   - {fileID: 439679712}
   - {fileID: 1923909496}
@@ -5137,11 +5172,6 @@ Transform:
   - {fileID: 933595460}
   - {fileID: 1889523112}
   - {fileID: 1676736545}
-  - {fileID: 1458675237}
-  - {fileID: 1234539677}
-  - {fileID: 1013612368}
-  - {fileID: 1839066432}
-  - {fileID: 304378372}
   - {fileID: 2073034593}
   - {fileID: 265671506}
   - {fileID: 1141125957}
@@ -5179,7 +5209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -5447,7 +5477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 832541593723537023, guid: 1a538130679bf264ca8d9d20e8590ffd, type: 3}
       propertyPath: m_LocalScale.x
@@ -5674,7 +5704,7 @@ GameObject:
   - component: {fileID: 1458675239}
   - component: {fileID: 1458675238}
   m_Layer: 0
-  m_Name: West (14)
+  m_Name: Vert. Spinner 1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5688,11 +5718,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458675236}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 1.226, y: 1, z: -3.491}
-  m_LocalScale: {x: 1, y: 0.4, z: 0.25}
+  m_LocalPosition: {x: 2.9691162, y: -1.5312991, z: -2.8032923}
+  m_LocalScale: {x: 4, y: 1.6, z: 0.25}
   m_Children: []
-  m_Father: {fileID: 1293719695}
-  m_RootOrder: 17
+  m_Father: {fileID: 18393331}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &1458675238
 MonoBehaviour:
@@ -5961,7 +5991,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.5, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1495120933
 PrefabInstance:
@@ -6352,7 +6382,7 @@ GameObject:
   - component: {fileID: 1534908836}
   - component: {fileID: 1534908835}
   m_Layer: 0
-  m_Name: West (3)
+  m_Name: Horizontal Spinner 3
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6370,7 +6400,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1293719695}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1534908835
 MonoBehaviour:
@@ -6733,7 +6763,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1641655908 stripped
 GameObject:
@@ -7221,7 +7251,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.5, z: 6.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1710667928
 GameObject:
@@ -7528,7 +7558,7 @@ GameObject:
   - component: {fileID: 1839066434}
   - component: {fileID: 1839066433}
   m_Layer: 0
-  m_Name: West (17)
+  m_Name: Vert. Spinner 5
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7542,11 +7572,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839066431}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: -0.586, y: 1, z: -3.604}
-  m_LocalScale: {x: 1, y: 0.4, z: 0.25}
+  m_LocalPosition: {x: -4.2788696, y: -1.5312991, z: -3.255293}
+  m_LocalScale: {x: 4, y: 1.6, z: 0.25}
   m_Children: []
-  m_Father: {fileID: 1293719695}
-  m_RootOrder: 20
+  m_Father: {fileID: 18393331}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
 --- !u!114 &1839066433
 MonoBehaviour:
@@ -8372,7 +8402,7 @@ GameObject:
   - component: {fileID: 2016449872}
   - component: {fileID: 2016449871}
   m_Layer: 0
-  m_Name: West (4)
+  m_Name: Horizontal Spinner 2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8390,7 +8420,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1293719695}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &2016449871
 MonoBehaviour:
@@ -8781,7 +8811,7 @@ GameObject:
   - component: {fileID: 2146044569}
   - component: {fileID: 2146044568}
   m_Layer: 0
-  m_Name: West (5)
+  m_Name: Horizontal Spinner 1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8799,7 +8829,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1293719695}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &2146044568
 MonoBehaviour:
