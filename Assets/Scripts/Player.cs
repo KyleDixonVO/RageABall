@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public GameObject WinTextObject;
     public TextMeshProUGUI LoseTextObject;
     public GameObject ControlMenuObject;
+    public AudioSource deathAudio;
+    public AudioSource pickUpAudio;
+    public AudioSource wallAudio;
     public float speedCap = 10f;
     public Rigidbody rigidbody;
     public Transform Spawn;
@@ -47,42 +50,22 @@ public class Player : MonoBehaviour
         }
        
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            PlayerMoveForward = true;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             PlayerMoveForward = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             PlayerMoveBack = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            PlayerMoveBack = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             PlayerMoveRight = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            PlayerMoveRight = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            PlayerMoveLeft = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             PlayerMoveLeft = true;
         }
@@ -140,6 +123,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+            pickUpAudio.Play();
             Score = Score + 100;
             SetScoreText();
 
@@ -151,6 +135,12 @@ public class Player : MonoBehaviour
             Deaths = Deaths + 1;
             SetLoseText();
             thePlayer.transform.position = Spawn.transform.position;
+            deathAudio.Play();
+        }
+
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            wallAudio.Play();
         }
     }
 }

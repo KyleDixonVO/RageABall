@@ -7,6 +7,7 @@ public class Portal : MonoBehaviour
 
     public Transform teleportTarget1;
     public GameObject thePlayer;
+    public AudioSource teleportAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,9 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
             thePlayer.transform.position = teleportTarget1.transform.position;
+            teleportAudio.Play();
         }
     }
 
