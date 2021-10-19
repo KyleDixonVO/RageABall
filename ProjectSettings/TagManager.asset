@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - Obstacle
+  - Wall
   layers:
   - Default
   - TransparentFX

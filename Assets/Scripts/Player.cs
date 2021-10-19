@@ -137,10 +137,13 @@ public class Player : MonoBehaviour
             thePlayer.transform.position = Spawn.transform.position;
             deathAudio.Play();
         }
+    }
 
-        if (other.gameObject.CompareTag("Wall"))
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Wall"))
         {
-            wallAudio.Play();
+            wallAudio.Play();     
         }
     }
 }
