@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/RageABall.unity
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 5e71bf9d2b6136542aaa621ab5fde864
+  - enabled: 1
+    path: Assets/Scenes/RageABall.unity
     guid: d8acd247f022dd444a9e5a2f8ee97198
   m_configObjects: {}
