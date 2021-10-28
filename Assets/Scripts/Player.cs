@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public GameObject WinTextObject;
     public TextMeshProUGUI LoseTextObject;
     public GameObject ControlMenuObject;
+    public TextMeshProUGUI StopsRemaining;
     public AudioSource deathAudio;
     public AudioSource pickUpAudio;
     public AudioSource wallAudio;
@@ -21,12 +22,15 @@ public class Player : MonoBehaviour
     private bool PlayerMoveLeft;
     private bool PlayerMoveRight;
     private int Deaths;
-    private int Score;
+    private int CoinsRemaining;
+    static bool usePrecisionStop = false;
+    static int precisionStopsRemaining = 5;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Score = 0;
+        CoinsRemaining = 16;
         SetScoreText();
         Deaths = 0;
         SetLoseText();
@@ -34,6 +38,8 @@ public class Player : MonoBehaviour
         this.gameObject.SetActive(true);
         thePlayer.transform.position = Spawn.transform.position;
         ControlMenuObject.SetActive(true);
+        SetPrecsionStopText();
+        
     }
 
     // Update is called once per frame
@@ -46,7 +52,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            ControlMenuObject.SetActive(false);
+            if (ControlMenuObject.activeInHierarchy == true)
+            { 
+                ControlMenuObject.SetActive(false); 
+            }
+            
+            else
+            {
+                ControlMenuObject.SetActive(true);
+            }
         }
        
 
@@ -70,11 +84,16 @@ public class Player : MonoBehaviour
             PlayerMoveLeft = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            usePrecisionStop = true;
+        }
+
     }
     void SetScoreText()
     {
-        ScoreText.text = "Score:" + Score.ToString();
-        if (Score >= 1600)
+        ScoreText.text = "Coins Remaining:" + CoinsRemaining.ToString();
+        if (CoinsRemaining <= 0)
         {
             WinTextObject.SetActive(true);
         }
@@ -84,9 +103,24 @@ public class Player : MonoBehaviour
     {
         LoseTextObject.text = "Deaths:" + Deaths.ToString();
     }
+
+    void SetPrecsionStopText()
+    {
+        StopsRemaining.text = "Stops Remaining: " + precisionStopsRemaining.ToString();
+    }
     private void FixedUpdate()
     {
-        
+        if (usePrecisionStop == true)
+        {
+            if (precisionStopsRemaining > 0)
+            {  
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);   
+                precisionStopsRemaining--;
+                SetPrecsionStopText();
+            }
+            usePrecisionStop = false;
+        }
+
         if (PlayerMoveForward == true)
         {
             GetComponent<Rigidbody>().AddForce(Vector3.forward * 5, ForceMode.VelocityChange);
@@ -124,7 +158,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             pickUpAudio.Play();
-            Score = Score + 100;
+            CoinsRemaining = CoinsRemaining - 1;
             SetScoreText();
 
         }

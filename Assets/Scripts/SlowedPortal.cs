@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
 
-public class Portal : MonoBehaviour
-{
-    private static System.Timers.Timer portalDowntime;
+public class SlowedPortal : MonoBehaviour
+{   
+    
     public Transform teleportTarget1;
     public GameObject thePlayer;
     public AudioSource teleportAudio;
+    public Rigidbody PlayerBody;
     static bool PlayPortal = false;
+    private static System.Timers.Timer portalDowntime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +24,15 @@ public class Portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
 
             thePlayer.transform.position = teleportTarget1.transform.position;
+            PlayerBody.velocity = new Vector3(0,0,0);
             if (PlayPortal == true)
             {
                 teleportAudio.Play();
@@ -42,4 +44,4 @@ public class Portal : MonoBehaviour
     {
         PlayPortal = true;
     }
-}  
+}
