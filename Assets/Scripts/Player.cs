@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public AudioSource deathAudio;
     public AudioSource pickUpAudio;
     public AudioSource wallAudio;
+    public AudioSource slowAudio;
     public float speedCap = 10f;
     public Rigidbody rigidbody;
     public Transform Spawn;
@@ -106,14 +107,15 @@ public class Player : MonoBehaviour
 
     void SetPrecsionStopText()
     {
-        StopsRemaining.text = "Stops Remaining: " + precisionStopsRemaining.ToString();
+        StopsRemaining.text = "Slows Remaining: " + precisionStopsRemaining.ToString();
     }
     private void FixedUpdate()
     {
         if (usePrecisionStop == true)
         {
             if (precisionStopsRemaining > 0)
-            {  
+            {
+                slowAudio.Play();
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);   
                 precisionStopsRemaining--;
                 SetPrecsionStopText();
@@ -144,9 +146,11 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(Vector3.right * 5, ForceMode.VelocityChange);
             PlayerMoveRight = false;
         }
-        if (rigidbody.velocity.magnitude > speedCap)
+        if (rigidbody.velocity.magnitude > 40f)
         {
-            rigidbody.velocity = rigidbody.velocity.normalized * speedCap;
+            rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+            rigidbody.velocity = rigidbody.velocity.normalized * Time.deltaTime * 30f;
+            //rigidbody.AddRelativeForce(rigidbody.velocity);
         }
     }
 
