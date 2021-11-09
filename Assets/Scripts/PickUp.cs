@@ -6,7 +6,7 @@ public class PickUp : MonoBehaviour
 {
 
     public float degreesPerSecond = 15.0f;
-    public float amplitude = 0.5f;
+    public float amplitude = 0.35f;
     public float frequency = 0.5f;
 
     Vector3 posOffset = new Vector3();
