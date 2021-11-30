@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.IO;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -22,10 +24,11 @@ public class Player : MonoBehaviour
     private bool PlayerMoveBack;
     private bool PlayerMoveLeft;
     private bool PlayerMoveRight;
-    private int Deaths;
-    private int CoinsRemaining;
+    public static int Deaths;
+    public int CoinsRemaining;
+    //public TextAsset highScores;
     static bool usePrecisionStop = false;
-    static int precisionStopsRemaining = 5;
+    static int precisionStopsRemaining = 3;
     
 
     // Start is called before the first frame update
@@ -97,6 +100,7 @@ public class Player : MonoBehaviour
         if (CoinsRemaining <= 0)
         {
             WinTextObject.SetActive(true);
+            WriteToFile();
         }
     }
 
@@ -173,6 +177,8 @@ public class Player : MonoBehaviour
             Deaths = Deaths + 1;
             SetLoseText();
             thePlayer.transform.position = Spawn.transform.position;
+            precisionStopsRemaining = 3;
+            SetPrecsionStopText();
             deathAudio.Play();
         }
     }
@@ -183,6 +189,35 @@ public class Player : MonoBehaviour
         {
             wallAudio.Play();     
         }
+    }
+
+    //[MenuItem("Tools/Write file")]
+    public static void WriteToFile()
+    {
+        string path = Application.streamingAssetsPath + "/playerScores/" + "highScores.txt";
+
+        StreamWriter writer = new StreamWriter(path, true);
+
+        writer.WriteLine("\nTime (s): " + Time.realtimeSinceStartup + " Deaths: " + Deaths);
+
+        writer.Close();
+
+        StreamReader reader = new StreamReader(path);
+
+        //AssetDatabase.ImportAsset(path);
+
+
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
+    }
+
+    //[MenuItem("Tools/Read file")]
+    public static void ReadFile()
+    {
+        string path = Application.streamingAssetsPath + "/playerScores/" + "highScores.txt";
+        StreamReader reader = new StreamReader(path);
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
     }
 }
 
